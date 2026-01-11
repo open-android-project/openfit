@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OpenFit">
         <activity
+            android:name=".Views.Activities.RoutineNewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Views.Activities.RoutineListActivity"
+            android:exported="false" />
+        <activity
             android:name=".Views.Activities.ExerciseNewActivity"
             android:exported="false" />
         <activity

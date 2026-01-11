@@ -55,6 +55,8 @@
     <string name="demo">DEMO</string>
     <string name="search_exercise_hint">filtrar por nome…</string>
     <string name="exercise_new_text">Novo Exercício</string>
+    <string name="routine_new_text">Nova Rotina</string>
+    <string name="no_routines_text">Parece que ainda não tens nenhuma rotina. Cria uma agora!</string>
     <string name="add">Adicionar</string>
     <string name="cancel">Cancelar</string>
     <string name="exercise_type_repsweight">Repetições &amp; Peso</string>

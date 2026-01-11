@@ -83,9 +83,7 @@ public class ExerciseListActivity extends AppCompatActivity {
     }
 
     private void setupNewExerciseButton() {
-        Button btn = findViewById(R.id.btnNewExercise);
-
-        btn.setOnClickListener(v -> {
+        findViewById(R.id.btnNewExercise).setOnClickListener(v -> {
             Intent in = new Intent(this, ExerciseNewActivity.class);
             startActivity(in);
         });

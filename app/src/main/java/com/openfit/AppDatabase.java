@@ -6,6 +6,7 @@ import androidx.room.RoomDatabase;
 import com.openfit.DAOs.ExerciseDAO;
 import com.openfit.DAOs.ExerciseTypeDAO;
 import com.openfit.DAOs.MuscleDAO;
+import com.openfit.DAOs.RoutineDAO;
 import com.openfit.Models.Exercise;
 import com.openfit.Models.ExerciseRoutine;
 import com.openfit.Models.ExerciseType;
@@ -30,4 +31,5 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract MuscleDAO muscleDAO();
     public abstract ExerciseTypeDAO exerciseTypeDAO();
     public abstract ExerciseDAO exerciseDAO();
+    public abstract RoutineDAO routineDAO();
 }
