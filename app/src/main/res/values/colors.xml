@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#FF1F1F1F</color>
+    <color name="accent_background_1">#FF161616</color>
+    <color name="accent_background_2">#FF1A1A1A</color>
+    <color name="light_background_1">#FF3A3A3A</color>
+    <color name="light_background_2">#FF424242</color>
+    <color name="unimportant_btn">#FF3A3A3A</color>
+    <color name="unimportant_btn_ripple">#4444</color>
+    <color name="text_1">#FFE0E0E0</color>
+    <color name="text_2">#BABABA</color>
+    <color name="accent">#9B0D0D</color>
+    <color name="accent_ripple">#22EE0000</color>
+</resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".Views.ExerciseList.ExerciseListActivity">
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/exercisesTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/agdasima_bold"
+            android:text="@string/exercises_text"
+            android:textColor="@color/text_1"
+            android:textSize="48sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/searchbarExercise"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:fontFamily="@font/agdasima_bold"
+                android:hint="@string/search_exercise_hint"
+                android:inputType="text"
+                android:textColor="@color/text_1"
+                android:textColorHint="@color/text_2"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/btnMuscleFilter"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/agdasima_bold"
+                android:foreground="@drawable/filter_icon"
+                android:insetTop="0px"
+                android:insetBottom="0px"
+                android:letterSpacing="0.03"
+                android:textColor="@color/text_1"
+                android:textSize="24sp"
+                app:cornerRadius="@dimen/corner_radius"
+                app:rippleColor="@color/accent_ripple" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/exercisesList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/box"
+        app:layout_constraintBottom_toTopOf="@id/btnNewExercise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleLayout" />
+
+    <Button
+        android:id="@+id/btnNewExercise"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/accent"
+        android:fontFamily="@font/agdasima_bold"
+        android:insetTop="0px"
+        android:insetBottom="0px"
+        android:letterSpacing="0.03"
+        android:text="@string/exercise_new_text"
+        android:textColor="@color/text_1"
+        android:textSize="24sp"
+        app:cornerRadius="@dimen/corner_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exercisesList"
+        app:rippleColor="@color/accent_ripple" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

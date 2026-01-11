@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".Views.MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/pixelify_sans_bold"
+        android:text="@string/title_text"
+        android:textColor="@color/text_1"
+        android:textSize="76sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/accent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <LinearLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btnNewWorkout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/accent"
+                android:fontFamily="@font/agdasima_bold"
+                android:insetTop="0px"
+                android:insetBottom="0px"
+                android:letterSpacing="0.03"
+                android:text="@string/new_workout"
+                android:textColor="@color/text_1"
+                android:textSize="24sp"
+                app:cornerRadius="@dimen/corner_radius"
+                app:rippleColor="@color/accent_ripple" />
+
+            <Button
+                android:id="@+id/btnRoutines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/unimportant_btn"
+                android:fontFamily="@font/agdasima_bold"
+                android:insetTop="0px"
+                android:insetBottom="0px"
+                android:letterSpacing="0.03"
+                android:text="@string/routines_text"
+                android:textColor="@color/text_1"
+                android:textSize="24sp"
+                app:cornerRadius="@dimen/corner_radius"
+                app:rippleColor="@color/unimportant_btn_ripple" />
+
+            <Button
+                android:id="@+id/btnHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/unimportant_btn"
+                android:fontFamily="@font/agdasima_bold"
+                android:insetTop="0px"
+                android:insetBottom="0px"
+                android:letterSpacing="0.03"
+                android:text="@string/history_text"
+                android:textColor="@color/text_1"
+                android:textSize="24sp"
+                app:cornerRadius="@dimen/corner_radius"
+                app:rippleColor="@color/unimportant_btn_ripple" />
+
+            <Button
+                android:id="@+id/btnExercises"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/unimportant_btn"
+                android:fontFamily="@font/agdasima_bold"
+                android:insetTop="0px"
+                android:insetBottom="0px"
+                android:letterSpacing="0.03"
+                android:text="@string/exercises_text"
+                android:textColor="@color/text_1"
+                android:textSize="24sp"
+                app:cornerRadius="@dimen/corner_radius"
+                app:rippleColor="@color/unimportant_btn_ripple" />
+
+            <Button
+                android:id="@+id/btnStatistics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/unimportant_btn"
+                android:fontFamily="@font/agdasima_bold"
+                android:insetTop="0px"
+                android:insetBottom="0px"
+                android:letterSpacing="0.03"
+                android:text="@string/statistics_text"
+                android:textColor="@color/text_1"
+                android:textSize="24sp"
+                app:cornerRadius="@dimen/corner_radius"
+                app:rippleColor="@color/unimportant_btn_ripple" />
+
+            <Button
+                android:id="@+id/btnSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/unimportant_btn"
+                android:fontFamily="@font/agdasima_bold"
+                android:insetTop="0px"
+                android:insetBottom="0px"
+                android:letterSpacing="0.03"
+                android:text="@string/settings_text"
+                android:textColor="@color/text_1"
+                android:textSize="24sp"
+                app:cornerRadius="@dimen/corner_radius"
+                app:rippleColor="@color/unimportant_btn_ripple" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

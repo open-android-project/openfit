@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:textAlignment="center"
+    tools:context=".Views.ExerciseNew.ExerciseNewActivity">
+
+    <TextView
+        android:id="@+id/exerciseNewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/agdasima_bold"
+        android:text="@string/exercise_new_text"
+        android:textColor="@color/text_1"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/exerciseNewForm"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/box"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/btnAddExercise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseNewTitle">
+
+        <EditText
+            android:id="@+id/exerciseNewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/agdasima_bold"
+            android:hint="@string/new_exercise_form_name_hint"
+            android:inputType="text"
+            android:textColor="@color/text_1"
+            android:textColorHint="@color/text_2"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/exerciseNewAka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/agdasima_bold"
+            android:hint="@string/new_exercise_form_aka_hint"
+            android:inputType="text"
+            android:textColor="@color/text_1"
+            android:textColorHint="@color/text_2"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/exerciseNewDemoUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/agdasima_bold"
+            android:hint="@string/new_exercise_form_demo_url"
+            android:inputType="text"
+            android:textColor="@color/text_1"
+            android:textColorHint="@color/text_2"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/exerciseNewMuscleForm"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/light_box"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/exerciseNewMainMuscleTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:fontFamily="@font/agdasima_bold"
+                    android:text="@string/new_exercise_main_muscle_title"
+                    android:textColor="@color/text_1"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/exerciseNewMainMuscleList"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/exerciseNewSecondaryMuscleTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:fontFamily="@font/agdasima_bold"
+                    android:text="@string/new_exercise_secondary_muscle_title"
+                    android:textColor="@color/text_1"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/exerciseNewSecondaryMuscleList"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddExercise"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/accent"
+        android:fontFamily="@font/agdasima_bold"
+        android:insetTop="0px"
+        android:insetBottom="0px"
+        android:letterSpacing="0.03"
+        android:text="@string/add"
+        android:textColor="@color/text_1"
+        android:textSize="24sp"
+        app:cornerRadius="@dimen/corner_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnCancelNewExercise"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseNewForm"
+        app:rippleColor="@color/accent_ripple" />
+
+    <Button
+        android:id="@+id/btnCancelNewExercise"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/unimportant_btn"
+        android:fontFamily="@font/agdasima_bold"
+        android:insetTop="0px"
+        android:insetBottom="0px"
+        android:letterSpacing="0.03"
+        android:text="@string/cancel"
+        android:textColor="@color/text_1"
+        android:textSize="24sp"
+        app:cornerRadius="@dimen/corner_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAddExercise"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseNewForm"
+        app:rippleColor="@color/unimportant_btn_ripple" />
+</androidx.constraintlayout.widget.ConstraintLayout>

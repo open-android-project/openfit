@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="14dp"
+    android:layout_marginTop="14dp"
+    android:layout_marginRight="14dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/exerciseName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/agdasima_bold"
+            android:text="NAME"
+            android:textColor="@color/text_1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/exerciseAka"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/agdasima_bold"
+            android:text="@string/aka"
+            android:textColor="@color/text_2"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/exerciseMuscles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/agdasima_bold"
+            android:text="MUSCLES"
+            android:textColor="@color/text_2"
+            android:textSize="14sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+
+            <Button
+                android:id="@+id/btnDemo"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/unimportant_btn"
+                android:fontFamily="@font/agdasima_bold"
+                android:insetTop="0px"
+                android:insetBottom="0px"
+                android:letterSpacing="0.03"
+                android:text="@string/demo"
+                android:textColor="@color/text_1"
+                android:textSize="14sp"
+                app:cornerRadius="@dimen/corner_radius"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:rippleColor="@color/unimportant_btn_ripple" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

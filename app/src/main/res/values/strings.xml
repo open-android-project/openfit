@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name" translatable="false">OpenFit</string>
+    <string name="title_text" translatable="false">OpenFit</string>
+    <string name="routines_text">Routines</string>
+    <string name="history_text">Workout History</string>
+    <string name="exercises_text">Exercises</string>
+    <string name="statistics_text">Statistics</string>
+    <string name="settings_text">Settings</string>
+    <string name="new_workout">+ Start Workout</string>
+    <string name="aka">"a.k.a "</string>
+    <string name="demo">DEMO</string>
+    <string name="search_exercise_hint">filter by name…</string>
+    <string name="exercise_new_text">New Exercise</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- EXERCISE TYPES AND DESCRIPTIONS -->
+    <string name="exercise_type_repsweight">Reps &amp; Weight</string>
+    <string name="exercise_type_repsbodyweight">Reps &amp; Bodyweight</string>
+    <string name="exercise_type_timeweight">Time &amp; Weight</string>
+    <string name="exercise_type_timebodyweight">Time &amp; Bodyweight</string>
+
+    <string name="exercise_type_description_repsweight">The exercise is measured by the number of reps you do with a certain amount of weight.</string>
+    <string name="exercise_type_description_repsbodyweight">The exercise is measured by the number of reps you do with your own bodyweight.</string>
+    <string name="exercise_type_description_timeweight">The exercise is measured by the amount of time you perform it with a certain amount of weight.</string>
+    <string name="exercise_type_description_timebodyweight">The exercise is measured by the amount of time you perform it with your own bodyweight.</string>
+
+    <!-- MUSCLES AND MUSCLE GROUPS -->
+    <string name="muscle_upper_chest">Upper Chest</string>
+    <string name="muscle_mid_chest">Mid Chest</string>
+    <string name="muscle_lower_chest">Lower Chest</string>
+    <string name="muscle_upper_trap">Upper Trap</string>
+    <string name="muscle_lower_trap">Lower Trap</string>
+    <string name="muscle_lat">Lat</string>
+    <string name="muscle_rear_delt">Rear Delt</string>
+    <string name="muscle_front_delt">Front Delt</string>
+    <string name="muscle_side_delt">Side Delt</string>
+    <string name="muscle_bicep">Bicep</string>
+    <string name="muscle_tricep">Tricep</string>
+    <string name="muscle_forearm">Forearm</string>
+    <string name="muscle_abs">Abs</string>
+    <string name="muscle_lower_back">Lower Back</string>
+    <string name="muscle_oblique">Oblique</string>
+    <string name="muscle_quad">Quad</string>
+    <string name="muscle_glute">Glute</string>
+    <string name="muscle_hamstring">Hamstring</string>
+    <string name="muscle_calf">Calf</string>
+    <string name="muscle_abductor">Abductor</string>
+    <string name="muscle_adductor">Adductor</string>
+
+    <string name="muscle_group_chest">Chest</string>
+    <string name="muscle_group_back">Back</string>
+    <string name="muscle_group_arms">Arms</string>
+    <string name="muscle_group_shoulders">Shoulders</string>
+    <string name="muscle_group_core">Core</string>
+    <string name="muscle_group_legs">Legs</string>
+
+    <!-- EXERCISES -->
+    <string name="exercise_chest_fly">Chest Fly</string>
+    <string name="aka_chest_fly">Machine Fly; Pec Deck;</string>
+    <string name="exercise_chest_press_machine">Chest Press Machine</string>
+    <string name="aka_chest_press_machine">Machine Press;</string>
+    <string name="exercise_bench_press">Bench Press</string>
+    <string name="aka_bench_press">Barbell Press;</string>
+    <string name="exercise_incline_bench_press">Incline Bench Press</string>
+    <string name="aka_incline_bench_press">Incline Barbell Press;</string>
+    <string name="exercise_barbell_row">Barbell Row</string>
+    <string name="aka_barbell_row">Bent Over Row;</string>
+    <string name="exercise_back_squat">Back Squat</string>
+    <string name="aka_back_squat">Barbell Squat;</string>
+    <string name="exercise_deadlift">Deadlift</string>
+    <string name="aka_deadlift"></string>
+    <string name="exercise_lat_pulldown">Lat Pulldown</string>
+    <string name="aka_lat_pulldown">Machine Pulldown;</string>
+
+
+    <!-- NEW EXERCISE FORM -->
+    <string name="new_exercise_form_name_hint">Name…</string>
+    <string name="new_exercise_form_aka_hint">Also known as…</string>
+    <string name="new_exercise_main_muscle_title">Main Muscle</string>
+    <string name="new_exercise_secondary_muscle_title">Sec. Muscle</string>
+    <string name="new_exercise_form_demo_url">Demo (URL)…</string>
+</resources>
