@@ -13,13 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OpenFit">
         <activity
-            android:name=".Views.ExerciseNew.ExerciseNewActivity"
+            android:name=".Views.Activities.ExerciseNewActivity"
             android:exported="false" />
         <activity
-            android:name=".Views.ExerciseList.ExerciseListActivity"
+            android:name=".Views.Activities.ExerciseListActivity"
             android:exported="false" />
         <activity
-            android:name=".Views.MainActivity"
+            android:name=".Views.Activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

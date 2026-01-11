@@ -1,9 +1,8 @@
-package com.openfit.Views.Dropdown;
+package com.openfit.Views.Popups;
 
 import android.content.Context;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.ListAdapter;
 
 import androidx.appcompat.widget.ListPopupWindow;
 import androidx.core.content.ContextCompat;

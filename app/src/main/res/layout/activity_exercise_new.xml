@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:textAlignment="center"
-    tools:context=".Views.ExerciseNew.ExerciseNewActivity">
+    tools:context=".Views.Activities.ExerciseNewActivity">
 
     <TextView
         android:id="@+id/exerciseNewTitle"
@@ -85,7 +85,7 @@
         <LinearLayout
             android:id="@+id/exerciseNewMuscleForm"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="200dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="12dp"
@@ -137,6 +137,16 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/exerciseNewTypeSwipper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:overScrollMode="never" />
 
     </LinearLayout>
 

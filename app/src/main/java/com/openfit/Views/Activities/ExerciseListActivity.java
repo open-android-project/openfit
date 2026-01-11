@@ -1,4 +1,4 @@
-package com.openfit.Views.ExerciseList;
+package com.openfit.Views.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,12 +16,12 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.openfit.Adapters.ExerciseListAdapter;
 import com.openfit.R;
 import com.openfit.Services.ExerciseService;
 import com.openfit.Services.MuscleService;
-import com.openfit.Views.Dropdown.DropdownPopup;
-import com.openfit.Views.Dropdown.DropdownAdapter;
-import com.openfit.Views.ExerciseNew.ExerciseNewActivity;
+import com.openfit.Views.Popups.DropdownPopup;
+import com.openfit.Adapters.DropdownAdapter;
 
 public class ExerciseListActivity extends AppCompatActivity {
     private ExerciseService exerciseService;

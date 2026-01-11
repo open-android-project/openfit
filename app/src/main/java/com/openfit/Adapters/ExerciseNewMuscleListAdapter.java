@@ -1,8 +1,10 @@
-package com.openfit.Views.ExerciseNew;
+package com.openfit.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -13,14 +15,11 @@ import com.openfit.R;
 
 import java.util.List;
 
-public class ExerciseNewMuscleListAdapter extends RecyclerView.Adapter<ExerciseNewMuscleListViewHolder> {
-    private Context context;
-    private List<MuscleGetListDTO> muscles;
+public class ExerciseNewMuscleListAdapter extends BaseRecyclerAdapter<MuscleGetListDTO, ExerciseNewMuscleListAdapter.ExerciseNewMuscleListViewHolder> {
     private MuscleGetListDTO selected;
 
-    public ExerciseNewMuscleListAdapter(Context context, List<MuscleGetListDTO> muscles) {
-        this.context = context;
-        this.muscles = muscles;
+    public ExerciseNewMuscleListAdapter(Context context, List<MuscleGetListDTO> items) {
+        super(context, items);
         selected = null;
     }
 
@@ -32,7 +31,7 @@ public class ExerciseNewMuscleListAdapter extends RecyclerView.Adapter<ExerciseN
 
     @Override
     public void onBindViewHolder(@NonNull ExerciseNewMuscleListViewHolder holder, int position) {
-        MuscleGetListDTO m = muscles.get(position);
+        MuscleGetListDTO m = items.get(position);
         holder.getName().setText(m.name);
 
         boolean isSelected = selected != null && selected.equals(m);
@@ -47,17 +46,24 @@ public class ExerciseNewMuscleListAdapter extends RecyclerView.Adapter<ExerciseN
             selected = isSelected ? null : m;
 
             if (oldSelected != null)
-                notifyItemChanged(muscles.indexOf(oldSelected));
+                notifyItemChanged(items.indexOf(oldSelected));
             notifyItemChanged(position);
         });
     }
 
-    @Override
-    public int getItemCount() {
-        return muscles.size();
-    }
-
     public MuscleGetListDTO getSelected() {
         return selected;
+    }
+
+    public static class ExerciseNewMuscleListViewHolder extends RecyclerView.ViewHolder {
+        private final TextView name;
+        public ExerciseNewMuscleListViewHolder(@NonNull View itemView) {
+            super(itemView);
+            name = itemView.findViewById(R.id.muscleName);
+        }
+
+        public TextView getName() {
+            return name;
+        }
     }
 }

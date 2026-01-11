@@ -1,4 +1,4 @@
-package com.openfit.Views;
+package com.openfit.Views.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.openfit.R;
-import com.openfit.Views.ExerciseList.ExerciseListActivity;
 
 public class MainActivity extends AppCompatActivity {
 

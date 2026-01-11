@@ -1,4 +1,4 @@
-package com.openfit.Views.Dropdown;
+package com.openfit.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

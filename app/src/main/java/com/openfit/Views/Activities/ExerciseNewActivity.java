@@ -1,12 +1,10 @@
-package com.openfit.Views.ExerciseNew;
+package com.openfit.Views.Activities;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -16,22 +14,22 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
-import com.openfit.DTOs.MuscleGetListDTO;
+import com.openfit.Adapters.ExerciseNewMuscleListAdapter;
+import com.openfit.Adapters.ExerciseNewTypeListAdapter;
 import com.openfit.Models.Exercise;
 import com.openfit.R;
-import com.openfit.Seeds.ExerciseTypeSeeds;
-import com.openfit.Seeds.MuscleSeeds;
 import com.openfit.Services.ExerciseService;
+import com.openfit.Services.ExerciseTypeService;
 import com.openfit.Services.MuscleService;
-import com.openfit.Views.Dropdown.DropdownAdapter;
-import com.openfit.Views.Dropdown.DropdownPopup;
-import com.openfit.Views.ExerciseList.ExerciseListAdapter;
 
 public class ExerciseNewActivity extends AppCompatActivity {
     private ExerciseService exerciseService;
     private MuscleService muscleService;
+    private ExerciseTypeService exerciseTypeService;
     private ExerciseNewMuscleListAdapter mainMuscleAdapter, secondaryMuscleAdapter;
+    private ExerciseNewTypeListAdapter exerciseTypeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +44,12 @@ public class ExerciseNewActivity extends AppCompatActivity {
 
         exerciseService = new ExerciseService(this);
         muscleService = new MuscleService(this);
+        exerciseTypeService = new ExerciseTypeService(this);
 
         setupCancelButton();
         setupAddButton();
-        setupMuscleDropdowns();
+        setupMuscleTable();
+        setupExerciseTypeSwipper();
     }
 
     private void setupCancelButton() {
@@ -69,7 +69,7 @@ public class ExerciseNewActivity extends AppCompatActivity {
         });
     }
 
-    private void setupMuscleDropdowns() {
+    private void setupMuscleTable() {
         muscleService.getAll().observe(this, muscles -> {
             // MAIN MUSCLE
 
@@ -88,23 +88,30 @@ public class ExerciseNewActivity extends AppCompatActivity {
         });
     }
 
+    private void setupExerciseTypeSwipper() {
+        exerciseTypeService.getExerciseTypeList().observe(this, types -> {
+            ViewPager2 exerciseTypeView = findViewById(R.id.exerciseNewTypeSwipper);
+            exerciseTypeAdapter = new ExerciseNewTypeListAdapter(this, types);
+            exerciseTypeView.setAdapter(exerciseTypeAdapter);
+            exerciseTypeView.setOffscreenPageLimit(2);
+        });
+    }
+
     private boolean addExercise() {
         String exerciseName = ((EditText)findViewById(R.id.exerciseNewName)).getText().toString();
         int mainMuscleId = selectedMainMuscle(), secondaryMuscleId = selectedSecondaryMuscle();
+        int exerciseTypeId = selectedType();
 
-        if(!isExerciseValid(exerciseName, mainMuscleId, secondaryMuscleId)) return false;
+        if(!isExerciseValid(exerciseName, mainMuscleId, secondaryMuscleId, exerciseTypeId)) return false;
 
         String exerciseAka = ((EditText)findViewById(R.id.exerciseNewAka)).getText().toString();
         String exerciseDemoUrl =  ((EditText)findViewById(R.id.exerciseNewDemoUrl)).getText().toString();
 
         Exercise exercise = new Exercise
                 (
-                        exerciseName,
-                        exerciseAka,
-                        mainMuscleId,
-                        secondaryMuscleId,
-                        ExerciseTypeSeeds.REPS_WEIGHT, //TODO
-                        exerciseDemoUrl,
+                        exerciseName, exerciseAka,
+                        mainMuscleId, secondaryMuscleId,
+                        exerciseTypeId, exerciseDemoUrl,
                         true
                 );
 
@@ -113,7 +120,7 @@ public class ExerciseNewActivity extends AppCompatActivity {
         return true;
     }
 
-    private boolean isExerciseValid(String name, int mainMuscleId, int secondaryMuscleId) {
+    private boolean isExerciseValid(String name, int mainMuscleId, int secondaryMuscleId, int exerciseTypeId) {
         boolean isValid = true;
 
         // TODO: CREATE POPUP WITH ERROR MESSAGE INSTEAD OF TOAST
@@ -136,6 +143,12 @@ public class ExerciseNewActivity extends AppCompatActivity {
             isValid = false;
         }
 
+        if(exerciseTypeId == -1) {
+            Toast t = Toast.makeText(getApplicationContext(), "Selected type is invalid... somehow...", LENGTH_SHORT);
+            t.show();
+            isValid = false;
+        }
+
         return isValid;
     }
 
@@ -147,5 +160,14 @@ public class ExerciseNewActivity extends AppCompatActivity {
     private int selectedSecondaryMuscle() {
         if(secondaryMuscleAdapter == null || secondaryMuscleAdapter.getSelected() == null) return -1;
         return secondaryMuscleAdapter.getSelected().id;
+    }
+
+    private int selectedType() {
+        if(exerciseTypeAdapter == null) return -1;
+        return
+                exerciseTypeAdapter.getTypeByPosition(
+                        ((ViewPager2)findViewById(R.id.exerciseNewTypeSwipper))
+                                .getCurrentItem()
+                );
     }
 }

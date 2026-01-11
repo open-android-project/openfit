@@ -1,4 +1,4 @@
-package com.openfit.Views.ExerciseList;
+package com.openfit.Adapters;
 
 import static android.view.View.GONE;
 
@@ -6,7 +6,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,13 +19,9 @@ import com.openfit.R;
 
 import java.util.List;
 
-public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListViewHolder> {
-    private Context context;
-    private List<ExerciseGetListDTO> exercises;
-
-    public ExerciseListAdapter(Context context, List<ExerciseGetListDTO> exercises) {
-        this.context = context;
-        this.exercises = exercises;
+public class ExerciseListAdapter extends BaseRecyclerAdapter<ExerciseGetListDTO, ExerciseListAdapter.ExerciseListViewHolder> {
+    public ExerciseListAdapter(Context context, List<ExerciseGetListDTO> items) {
+        super(context, items);
     }
 
     @NonNull
@@ -33,7 +32,7 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ExerciseListViewHolder holder, int position) {
-        ExerciseGetListDTO e = exercises.get(position);
+        ExerciseGetListDTO e = items.get(position);
 
         holder.getName().setText(e.name);
 
@@ -69,8 +68,31 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListViewHo
          */
     }
 
-    @Override
-    public int getItemCount() {
-        return exercises.size();
+    public static class ExerciseListViewHolder extends RecyclerView.ViewHolder {
+        private final TextView name, aka, muscles;
+        private final Button demo;
+        public ExerciseListViewHolder(@NonNull View itemView) {
+            super(itemView);
+            name = itemView.findViewById(R.id.exerciseName);
+            aka = itemView.findViewById(R.id.exerciseAka);
+            muscles = itemView.findViewById(R.id.exerciseMuscles);
+            demo = itemView.findViewById(R.id.btnDemo);
+        }
+
+        public TextView getName() {
+            return name;
+        }
+
+        public TextView getAKA() {
+            return aka;
+        }
+
+        public TextView getMuscles() {
+            return muscles;
+        }
+
+        public Button getDemo() {
+            return demo;
+        }
     }
 }
